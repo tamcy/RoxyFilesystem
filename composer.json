@@ -1,0 +1,26 @@
+{
+  "name": "sparkson/roxy-filesystem",
+  "description": "Filesystem implementation for Roxyfileman in PHP (extracted from elendev/roxyfileman-bundle).",
+  "keywords": [ "roxyfileman" ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jonas RENAUDOT",
+      "email": "jonas.renaudot@gmail.com"
+    },
+    {
+      "name": "Tamcy",
+      "email": "tamcyhk@outlook.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.3",
+    "psr/http-message": "^1.0",
+    "symfony/finder": "~2.3|~3.0",
+    "symfony/filesystem": "~2.3|~3.0",
+    "symfony/http-foundation": "~2.3|~3.0"
+  },
+  "autoload": {
+    "psr-4": { "Sparkson\\RoxyFileSystem\\": "src/" }
+  }
+}
