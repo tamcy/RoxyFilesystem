@@ -21,6 +21,6 @@
     "symfony/http-foundation": "~2.3|~3.0"
   },
   "autoload": {
-    "psr-4": { "Sparkson\\RoxyFileSystem\\": "src/" }
+    "psr-4": { "Sparkson\\RoxyFilesystem\\": "src/" }
   }
 }
