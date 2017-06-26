@@ -217,11 +217,20 @@ class LocalFileSystem implements FileSystemInterface
             return new StandardResponse(false, 'The destination directory is not a valid directory');
         }
 
+        $errors = array();
         foreach ($files as $file) {
-            $file->move($realDestinationDirectory, $this->cleanFilename($file->getClientOriginalName()));
+            if ($file->isValid()) {
+                $file->move($realDestinationDirectory, $this->cleanFilename($file->getClientOriginalName()));
+            } else {
+                $errors[] = $file->getErrorMessage();
+            }
         }
 
-        return new StandardResponse();
+        if ($errors) {
+            return new StandardResponse(false, implode("\n", $errors));
+        } else {
+            return new StandardResponse();
+        }
     }
 
     /**
